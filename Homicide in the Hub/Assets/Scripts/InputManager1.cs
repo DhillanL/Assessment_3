@@ -73,14 +73,15 @@ public class InputManager1 : MonoBehaviour {
 
 	void StopGame(GameObject menu){
 		//Stops ingame time and playermovement
-		Time.timeScale = 0; 
+		//Time.timeScale = 0;    // removed so that the timer wil work 
 		playerMovement.enabled = false;
+        
 		menu.SetActive (true);
 	}
 		
 	public void ResumeGame(GameObject menu){
 		//Resumes ingame time and playermovement
-		Time.timeScale = 1; 
+		//Time.timeScale = 1;    // removed so that the timer wil work 
 		playerMovement.enabled = true;
 		menu.SetActive (false);
 	}
