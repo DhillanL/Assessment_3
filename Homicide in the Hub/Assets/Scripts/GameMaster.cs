@@ -20,9 +20,30 @@ using System.Linq; //Used for take in pick items
 	private MurderWeapon[] murderWeapons;
 	private PlayerCharacter playerCharacter;
 
-	//NPC Sprites
-	//Made public to allow for dragging and dropping of Sprites
-	public Sprite pirateSprite;
+
+    //ignore functions -- will clean up later
+    private NonPlayerCharacter[] ignoredNPCs;
+    private int numIgnoredNPCs = 0;
+    
+
+    public void ignoreNPC(NonPlayerCharacter ignoreCharacter)
+    {
+        ignoredNPCs[numIgnoredNPCs + 1] = ignoreCharacter;
+        numIgnoredNPCs += 1;
+        print(ignoredNPCs);
+    }
+
+    public void unignoreNPC(NonPlayerCharacter ignoreCharacter)
+    {
+        ignoredNPCs = ignoredNPCs.Except(new NonPlayerCharacter[] { ignoreCharacter }).ToArray();
+        numIgnoredNPCs -= 1;
+    }
+
+
+
+    //NPC Sprites
+    //Made public to allow for dragging and dropping of Sprites
+    public Sprite pirateSprite;
 	public Sprite mimesSprite;
 	public Sprite millionaireSprite;
 	public Sprite cowgirlSprite;
@@ -80,7 +101,6 @@ using System.Linq; //Used for take in pick items
 	public GameObject tripwirePrefab;
 
 	private NonPlayerCharacter murderer;
-
 	//Relevant Clues
 	private List<Item> relevant_items;
 	private List<VerbalClue> relevant_verbal_clues;
@@ -171,8 +191,10 @@ using System.Linq; //Used for take in pick items
 			"Errrm...are you sure? I’m not that useful really."
 		};
 
-		//Weaknesses
-		List<string> pirateWeaknesses = new List<string> {"Forceful","Wisecracking","Kind"};
+        NonPlayerCharacter[] ignoredNPCs = new NonPlayerCharacter[6];
+
+        //Weaknesses
+        List<string> pirateWeaknesses = new List<string> {"Forceful","Wisecracking","Kind"};
 		List<string> mimeWeaknesses = new List<string> {"Intimidating","Coaxing","Inspiring"};
 		List<string> millionaireWeaknesses = new List<string> {"Forceful","Rushed","Kind"};
 		List<string> cowgirlWeaknesses = new List<string> {"Condescending","Wisecracking","Inspiring"};

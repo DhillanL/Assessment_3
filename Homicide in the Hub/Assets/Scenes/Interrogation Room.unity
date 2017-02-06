@@ -1585,7 +1585,7 @@ GameObject:
   m_Component:
   - 224: {fileID: 1267746812}
   m_Layer: 5
-  m_Name: Back
+  m_Name: Ignore
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1848,7 +1848,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Back
+  m_Text: Ignore
 --- !u!222 &1338466239
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3048,7 +3048,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 668933321}
-        m_MethodName: LoadPreviousScene
+        m_MethodName: IgnoreNPC
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
