@@ -83,10 +83,11 @@ public class AccuseScript : MonoBehaviour {
             GameMaster.instance.stop_timer();  // stop the timer when the player wins
 			SceneManager.LoadScene ("Win Screen");
 		} else {
-			//If not display accusation failed message
+			//If not go to the lose screen 
 			notebookMenu.SetActive (false);
 			verbal.SetActive (true);
-			verbalText.text = "You don't have enough evidence to accuse me of murder!";
+            GameMaster.instance.stop_timer();
+            SceneManager.LoadScene("Lose Screen");
 
 		}
 	}

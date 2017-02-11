@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 public class ShowScore : MonoBehaviour {
@@ -10,12 +11,22 @@ public class ShowScore : MonoBehaviour {
     private int clues_found = NotebookManager.instance.clue_count();
     private int time = (int)GameMaster.instance.get_timer();
 
-    private void set_score()
+    private void set_score(int screen)
     {
-        scoredisplay.text = ("SCORE: \n\n" +
-        "Time taken: " + convert_time(time) +
-        "\nClues found: " + clues_found + "/9 ") +
-        "\n\n Overall Score: " + caluclate_score().ToString("0") + " /100";
+        if (screen == 0)
+        {
+            scoredisplay.text = ("SCORE: \n\n" +
+            "Time taken: " + convert_time(time) +
+            "\nClues found: " + clues_found + "/9 ") +
+            "\n\n Overall Score: " + caluclate_score().ToString("0") + " /100";
+        } else
+        {
+            scoredisplay.text = ("SCORE: \n\n" +
+            "Time taken: " + convert_time(time) +
+            "\nClues found: " + clues_found + "/9 ") +
+            "\n\n Overall Score: 0 /100";
+
+        }
     }
 
     private string convert_time(int time)
@@ -58,6 +69,13 @@ public class ShowScore : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
-        set_score();
+        if (SceneManager.GetActiveScene().Equals("Win Screen"))
+        {
+            set_score(0);
+        } else
+        {
+            set_score(1);
+        }
+        
     }
 }
