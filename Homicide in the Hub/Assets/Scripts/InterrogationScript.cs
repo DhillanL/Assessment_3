@@ -7,7 +7,7 @@ public class InterrogationScript : MonoBehaviour {
 
 	//__Variables__
 	private string previousScene;
-	private NonPlayerCharacter character;
+	public NonPlayerCharacter character;
 
 	public static InterrogationScript instance = null;
 
@@ -24,6 +24,7 @@ public class InterrogationScript : MonoBehaviour {
 	//Setters
 	public void SetInterrogationCharacter(NonPlayerCharacter character){
 		this.character = character;
+        Debug.Log(character);
 	}
 
 	public void SetReturnScene(string sceneName){

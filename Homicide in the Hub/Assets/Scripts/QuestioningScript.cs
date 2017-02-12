@@ -18,9 +18,11 @@ public class QuestioningScript : MonoBehaviour
 
     public Text[] detectiveStylesText = new Text[3]; //Where Left-most button is 1 and rightmost is 3
     public Text clueSpeech;         //Where the clue text is written to
+    static private string[] ignpcs = new string[10];
 
     void Start()
     {
+        
         //Get detective and character from singletons
         detective = GameMaster.instance.GetPlayerCharacter();
         character = InterrogationScript.instance.GetInterrogationCharacter();
@@ -76,28 +78,48 @@ public class QuestioningScript : MonoBehaviour
     }
 
     //ignore functions -- will clean up later
-    static private NonPlayerCharacter[] ignoredNPCs;
-    static private int numIgnoredNPCs = 0;
+    
+    
+    private int numIgnoredNPCs = 0;
 
 
-    static public void ignoreNPC(NonPlayerCharacter ignoreCharacter)
+     public void ignoreNPC(string ignoreCharacter)
     {
-        ignoredNPCs[numIgnoredNPCs + 1] = ignoreCharacter;
+        ignpcs[numIgnoredNPCs] = ignoreCharacter;
         numIgnoredNPCs += 1;
-        print(ignoredNPCs);
+        Debug.Log(ignpcs[0]);
     } 
 
-    static public void unignoreNPC()
+    public void unignoreNPC()
     {
         for (int x = 0; x <= numIgnoredNPCs; x += 1)
         {
-            ignoredNPCs[x] = null;
+            ignpcs[x] = null;
         }
         numIgnoredNPCs = 0;
     }
-    public NonPlayerCharacter getIgnoredNPCs()
+    public bool Isignored(string name)
     {
-        return ignoredNPCs;
+        int check = 0;
+        for (int i = 0; i<10 ; i++)
+        {
+            if (ignpcs[i] == name)
+            {
+                check = 1;
+            }
+        }
+
+        if (check == 0)
+        {
+            return false;
+        }
+         else
+        {
+            return true;
+        }
+
+        
+        
     }
 }
    
