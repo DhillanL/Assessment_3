@@ -21,29 +21,14 @@ using System.Linq; //Used for take in pick items
 	private PlayerCharacter playerCharacter;
 
 
-    //ignore functions -- will clean up later
-    private NonPlayerCharacter[] ignoredNPCs;
-    private int numIgnoredNPCs = 0;
-    
-
-    public void ignoreNPC(NonPlayerCharacter ignoreCharacter)
-    {
-        ignoredNPCs[numIgnoredNPCs + 1] = ignoreCharacter;
-        numIgnoredNPCs += 1;
-        print(ignoredNPCs);
-    }
-
-    public void unignoreNPC(NonPlayerCharacter ignoreCharacter)
-    {
-        ignoredNPCs = ignoredNPCs.Except(new NonPlayerCharacter[] { ignoreCharacter }).ToArray();
-        numIgnoredNPCs -= 1;
-    }
+   
 
 
 
-    //NPC Sprites
-    //Made public to allow for dragging and dropping of Sprites
-    public Sprite pirateSprite;
+
+//NPC Sprites
+//Made public to allow for dragging and dropping of Sprites
+public Sprite pirateSprite;
 	public Sprite mimesSprite;
 	public Sprite millionaireSprite;
 	public Sprite cowgirlSprite;

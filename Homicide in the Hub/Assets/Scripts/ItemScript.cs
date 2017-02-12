@@ -15,7 +15,8 @@ public class ItemScript : MonoBehaviour {
 		//Adds the item to the inventory, updates the notebook and destroys the item gameobject.
 		NotebookManager.instance.inventory.AddItemToInventory (item);
 		NotebookManager.instance.UpdateNotebook();
-		Destroy (gameObject);
+        QuestioningScript.unignoreNPC();
+        Destroy (gameObject);
 
 	}
 

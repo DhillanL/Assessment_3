@@ -21,7 +21,8 @@ public class ButtonScript : MonoBehaviour {
         //Loads the previously stored scene in InterrogationScript.
         //Only used in the interogation room.
         //makes that npc untalkable to untill anothe clue is found
-        GameMaster.instance.ignoreNPC(InterrogationScript.instance.GetInterrogationCharacter());
+        QuestioningScript.ignoreNPC(InterrogationScript.instance.GetInterrogationCharacter());
+        //.GetComponent<GameMaster>().ignoreNPC(InterrogationScript.instance.GetInterrogationCharacter());
         string previousScene = InterrogationScript.instance.GetReturnScene();
         SceneManager.LoadScene(previousScene);
     }
