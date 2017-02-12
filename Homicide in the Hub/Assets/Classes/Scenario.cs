@@ -34,6 +34,7 @@ public class Scenario
 		Shuffler shuffler = new Shuffler ();
 		shuffler.Shuffle (weapons);
 		weapon = weapons [0];
+       
 	}
 			
 	// Chooses a random motive from the string[] 'motives' initialised above
@@ -49,6 +50,7 @@ public class Scenario
 		shuffler.Shuffle (npcs);
 		NonPlayerCharacter murderer = npcs [0];
 		murderer.SetAsMurderer ();
+        Debug.Log(murderer.getCharacterID()); // write to console the murderer 
 		return murderer;
 	}
 
@@ -323,6 +325,13 @@ public class Scenario
 		for (int i = 0; (relevant_item_clues.Count) > i; i++) {
 			relevant_clues.Add (relevant_item_clues [i]);
 		}
-		return relevant_clues;
+
+        // added to write in the console the clues needed to win the game so it can be tested easier 
+
+        for (int i = 0; i < 3; i++)   
+        {
+            Debug.Log(relevant_clues[i].getID());
+        }
+        return relevant_clues;
 	}
 }

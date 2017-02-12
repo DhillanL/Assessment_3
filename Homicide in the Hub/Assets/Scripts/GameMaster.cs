@@ -85,6 +85,11 @@ using System.Linq; //Used for take in pick items
 	private List<Item> relevant_items;
 	private List<VerbalClue> relevant_verbal_clues;
 
+
+    // floats for the timer
+    private float timer;
+    private bool run_timer = true;
+
 	//Sets as a Singleton
 	void Awake () {  //Makes this a singleton class on awake
 		if (instance == null) { //Does an instance already exist?
@@ -322,5 +327,29 @@ using System.Linq; //Used for take in pick items
 		NotebookManager.instance.inventory.Reset();	//Reset inventory
 		NotebookManager.instance.UpdateNotebook();
 	}
-		
+
+    // NEW FOR ASSESSMENT 3 - THE TIMER FOR SCORING 
+
+    public void stop_timer()
+    {
+        run_timer = false;
+    }
+    public void set_timer()
+    {
+        run_timer = true;
+    }
+    public float get_timer()
+    {
+        return timer;
+    }
+
+    private void Update()
+    {
+        if (run_timer)
+        {
+            timer += Time.deltaTime;
+            //Debug.Log(timer);
+        }
+    }
+
 }
