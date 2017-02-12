@@ -1,31 +1,13 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Classes\Scenario.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GameMaster.cs">
     <Files>
-      <File FileName="Assets\Scripts\GameMaster.cs" Line="9" Column="63" />
-      <File FileName="Assets\Scripts\AccuseScript.cs" Line="14" Column="2" />
-      <File FileName="Assets\Scripts\ButtonScript.cs" Line="7" Column="2" />
-      <File FileName="Assets\Scripts\CharacterInteraction.cs" Line="7" Column="127" />
-      <File FileName="Assets\Scripts\CharacterSelector.cs" Line="11" Column="5" />
-      <File FileName="Assets\Scripts\InputManager1.cs" Line="5" Column="80" />
-      <File FileName="Assets\Scripts\InterrogationScript.cs" Line="6" Column="2" />
-      <File FileName="Assets\Scripts\ItemScript.cs" Line="8" Column="52" />
-      <File FileName="Assets\Scripts\LevelManager.cs" Line="8" Column="61" />
-      <File FileName="Assets\Scripts\NotebookManager.cs" Line="21" Column="23" />
-      <File FileName="Assets\Scripts\PlayerMovement.cs" Line="6" Column="74" />
-      <File FileName="Assets\Scripts\QuestioningScript.cs" Line="8" Column="93" />
-      <File FileName="Assets\Scripts\TraverseRooms.cs" Line="7" Column="87" />
-      <File FileName="Assets\Classes\Character.cs" Line="1" Column="1" />
-      <File FileName="Assets\Classes\Clue.cs" Line="1" Column="1" />
-      <File FileName="Assets\Classes\Inventory.cs" Line="1" Column="1" />
-      <File FileName="Assets\Classes\Item.cs" Line="5" Column="4" />
-      <File FileName="Assets\Classes\Scenario.cs" Line="288" Column="26" />
+      <File FileName="Assets/Scripts/GameMaster.cs" Line="1" Column="1" />
+      <File FileName="Assets/Classes/NonPlayerCharacter.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <RunToCursorBreakpoint file="C:\Users\Chris Whitlam\Documents\Computer Science\2nd Year\SEPR\Repo\HITH-Global\Homicide in the Hub\Assets\Classes\Scenario.cs" line="288" column="20" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>
