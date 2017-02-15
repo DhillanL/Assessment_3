@@ -30,6 +30,8 @@ using System.Linq; //Used for take in pick items
 	public Sprite wizardSprite;
 	public Sprite robotSprite;
 	public Sprite astrogirlSprite;
+	public Sprite chefSprite;
+	public Sprite madscientistSprite;
 
 	//NPC Prefabs
 	//Made public to allow for dragging and dropping of prefabs
@@ -41,6 +43,8 @@ using System.Linq; //Used for take in pick items
 	public GameObject wizardPref;
 	public GameObject robotPref;
 	public GameObject astrogirlPref;
+	public GameObject chefPref;
+	public GameObject madscientistPref;
 
 
 	//Item Sprite decleratation
@@ -230,8 +234,10 @@ using System.Linq; //Used for take in pick items
 		List<string> cowgirlWeaknesses = new List<string> {"Condescending","Wisecracking","Inspiring"};
 		List<string> romanWeaknesses = new List<string> {"Condescending","Coaxing","Inquisitive"};
 		List<string> wizardWeaknesses = new List<string> {"Intimidating","Rushed","Inquisitive"};
-		List<string> robotWeaknesses = new List<string> {"Intimidating", "Kind", "Coaxing"};
+		List<string> robotWeaknesses = new List<string> {"Intimidating", "Coaxing", "Kind"};
 		List<string> astrogirlWeaknesses = new List<string> { "Forceful", "Wisecracking", "Inspiring" };
+		List<string> chefWeaknesses = new List<string> { "Condescending", "Coaxing", "Inquisitie" };
+		List<string> madscientistWeaknesses = new List<string> { "Forceful", "Rushed", "Kind" };
 
 
 		//Defining NPC's
@@ -243,6 +249,8 @@ using System.Linq; //Used for take in pick items
 		NonPlayerCharacter wizard = new NonPlayerCharacter("Randolf the Deep Purple",wizardSprite,"Dodgy Dealer",wizardPref,wizardWeaknesses, wizardResponses );
 		NonPlayerCharacter robot = new NonPlayerCharacter("Droid Mayweather",robotSprite, "Mean Machine", robotPref, robotWeaknesses, robotResponses );
 		NonPlayerCharacter astrogirl = new NonPlayerCharacter ("Astrigirl", astrogirlSprite, "Spacegirl", astrogirlPref, astrogirlWeaknesses, astrogirlResponses);
+		NonPlayerCharacter chef = new NonPlayerCharacter ("Philip Mingot", chefSprite, "The Gastronomer", chefPref, chefWeaknesses, chefRepsonses);
+		NonPlayerCharacter madscientist = new NonPlayerCharacter ("Professor Bon Vose", madscientistSprite, "Dr. Evil", madscientistPref, madscientistWeaknesses, madscientistRepsonses);
 
 		//Defining Scenes
 		Scene controlRoom = new Scene("Control Room");
@@ -275,7 +283,7 @@ using System.Linq; //Used for take in pick items
 
 		murderWeapons = new MurderWeapon[8] {cutlass,poison,garrote,knife,laserGun,leadPipe,westernPistol,wizardStaff};
 		itemClues = new Item [9] {beret,footprints,gloves,wine,shatteredGlass,shrapnel,smellyDeath,spellbook,tripwire};
-		characters =  new NonPlayerCharacter[6] {pirate,mimes,millionaire,cowgirl,roman,wizard};
+		characters =  new NonPlayerCharacter[10] {pirate,mimes,millionaire,cowgirl,roman,wizard,robot,astrogirl,chef,madscientist};
 		scenes = new Scene[8] {atrium,lectureTheatre,lakehouse,controlRoom,kitchen,islandOfInteraction,roof,undergroundLab};
 	}
 
@@ -284,10 +292,10 @@ using System.Linq; //Used for take in pick items
 		Shuffler shuffler = new Shuffler ();
 		shuffler.Shuffle (characters);
 		shuffler.Shuffle (scenes);
-		foreach (NonPlayerCharacter character in characters){ 	//For every character in the randomly shuffled array
+		foreach (NonPlayerCharacter character in characters){	//For every character in the randomly shuffled array
 			scenes [sceneCounter].AddNPCToArray (character);		//Assign a character to a scene
 			sceneCounter += 1;									//Increment sceneCounter
-			if (sceneCounter > scenes.Length) {					//If the counter is above the number of scenes cycle to the first scene.  
+			if (sceneCounter >= scenes.Length) {					//If the counter is above the number of scenes cycle to the first scene.  
 				sceneCounter = 0;
 			}
 		}

@@ -1225,6 +1225,54 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114000013358668900, guid: c0294a2e4691f2847ac35ec5692dbf5b,
+        type: 2}
+      propertyPath: robotSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 22841c7fa6bf14cfab328ac11ca8b316,
+        type: 3}
+    - target: {fileID: 114000013358668900, guid: c0294a2e4691f2847ac35ec5692dbf5b,
+        type: 2}
+      propertyPath: robotPref
+      value: 
+      objectReference: {fileID: 1000010154093756, guid: f5bb86955c513435a9937a554cb0a66b,
+        type: 2}
+    - target: {fileID: 114000013358668900, guid: c0294a2e4691f2847ac35ec5692dbf5b,
+        type: 2}
+      propertyPath: madscientistPref
+      value: 
+      objectReference: {fileID: 1000012222569170, guid: 0183799839ea44fdaac00eb90cad80fc,
+        type: 2}
+    - target: {fileID: 114000013358668900, guid: c0294a2e4691f2847ac35ec5692dbf5b,
+        type: 2}
+      propertyPath: astrogirlPref
+      value: 
+      objectReference: {fileID: 1000011220709646, guid: cdd9e90612e70493ba30fc6890fe8c0d,
+        type: 2}
+    - target: {fileID: 114000013358668900, guid: c0294a2e4691f2847ac35ec5692dbf5b,
+        type: 2}
+      propertyPath: chefPref
+      value: 
+      objectReference: {fileID: 1000012606020678, guid: 2c529e13236ed43afafc7d753730ee21,
+        type: 2}
+    - target: {fileID: 114000013358668900, guid: c0294a2e4691f2847ac35ec5692dbf5b,
+        type: 2}
+      propertyPath: astrogirlSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 638c59a8070d84ad0ad768ea0b9ee133,
+        type: 3}
+    - target: {fileID: 114000013358668900, guid: c0294a2e4691f2847ac35ec5692dbf5b,
+        type: 2}
+      propertyPath: chefSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: aca730fa8e6274a89b539a3621b06c16,
+        type: 3}
+    - target: {fileID: 114000013358668900, guid: c0294a2e4691f2847ac35ec5692dbf5b,
+        type: 2}
+      propertyPath: madscientistSprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 195e2a3680695497db2d77611b2e28da,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c0294a2e4691f2847ac35ec5692dbf5b, type: 2}
   m_IsPrefabParent: 0
