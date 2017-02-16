@@ -16,10 +16,17 @@ public class CharacterInteraction : MonoBehaviour {
 
 	//When the character is clicked on
 	void OnMouseDown() {
-		//Pass the character and current scene to the interrogation script to be used in the interrogation room
-		InterrogationScript.instance.SetInterrogationCharacter (character);
-		InterrogationScript.instance.SetReturnScene (SceneManager.GetActiveScene().name);
-		SceneManager.LoadScene ("Interrogation Room");
-	}
-}
- 
+        //Pass the character and current scene to the interrogation script to be used in the interrogation room
+        InterrogationScript.instance.SetInterrogationCharacter (character);
+        Debug.Log(character.getNickname());
+
+        if (!(GameObject.FindWithTag("local").GetComponent<QuestioningScript>().Isignored(character.getNickname())))
+        {
+            InterrogationScript.instance.SetReturnScene(SceneManager.GetActiveScene().name);
+            SceneManager.LoadScene("Interrogation Room");
+        }  
+
+        }
+
+    }
+            

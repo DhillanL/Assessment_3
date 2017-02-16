@@ -20,9 +20,15 @@ using System.Linq; //Used for take in pick items
 	private MurderWeapon[] murderWeapons;
 	private PlayerCharacter playerCharacter;
 
-	//NPC Sprites
-	//Made public to allow for dragging and dropping of Sprites
-	public Sprite pirateSprite;
+
+   
+
+
+
+
+//NPC Sprites
+//Made public to allow for dragging and dropping of Sprites
+public Sprite pirateSprite;
 	public Sprite mimesSprite;
 	public Sprite millionaireSprite;
 	public Sprite cowgirlSprite;
@@ -88,10 +94,14 @@ using System.Linq; //Used for take in pick items
 	public GameObject tripwirePrefab;
 
 	private NonPlayerCharacter murderer;
-
 	//Relevant Clues
 	private List<Item> relevant_items;
 	private List<VerbalClue> relevant_verbal_clues;
+
+
+    // floats for the timer
+    private float timer;
+    private bool run_timer = true;
 
 	//Sets as a Singleton
 	void Awake () {  //Makes this a singleton class on awake
@@ -179,6 +189,7 @@ using System.Linq; //Used for take in pick items
 			"Errrm...are you sure? I’m not that useful really."
 		};
 
+<<<<<<< HEAD
 		string[] astrogirlResponses = new string[9] {
 			"Hah, as if you can force me to say anything incriminating, earthling!",
 			"Hey, careful. You don't know who you're talking to!",
@@ -229,6 +240,12 @@ using System.Linq; //Used for take in pick items
 
 		//Weaknesses
 		List<string> pirateWeaknesses = new List<string> {"Forceful","Wisecracking","Kind"};
+=======
+        NonPlayerCharacter[] ignoredNPCs = new NonPlayerCharacter[6];
+
+        //Weaknesses
+        List<string> pirateWeaknesses = new List<string> {"Forceful","Wisecracking","Kind"};
+>>>>>>> master
 		List<string> mimeWeaknesses = new List<string> {"Intimidating","Coaxing","Inspiring"};
 		List<string> millionaireWeaknesses = new List<string> {"Forceful","Rushed","Kind"};
 		List<string> cowgirlWeaknesses = new List<string> {"Condescending","Wisecracking","Inspiring"};
@@ -386,5 +403,29 @@ using System.Linq; //Used for take in pick items
 		NotebookManager.instance.inventory.Reset();	//Reset inventory
 		NotebookManager.instance.UpdateNotebook();
 	}
-		
+
+    // NEW FOR ASSESSMENT 3 - THE TIMER FOR SCORING 
+
+    public void stop_timer()
+    {
+        run_timer = false;
+    }
+    public void set_timer()
+    {
+        run_timer = true;
+    }
+    public float get_timer()
+    {
+        return timer;
+    }
+
+    private void Update()
+    {
+        if (run_timer)
+        {
+            timer += Time.deltaTime;
+            //Debug.Log(timer);
+        }
+    }
+
 }
