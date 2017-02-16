@@ -235,7 +235,7 @@ public class Scenario
 		}
 
 		// add the 4 irrelevant verbal clues
-		while (item_clue_pool.Count() < 6) {
+		while (item_clue_pool.Count() < 8) {
 			int index = Random.Range (0, item_clues.Count()-1);
 			if (item_clue_pool.Contains (item_clues [index]) == false) {
 				item_clue_pool.Add (item_clues [index]);
