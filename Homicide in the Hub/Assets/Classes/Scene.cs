@@ -10,6 +10,8 @@ public class Scene{
 	private string name;
 	private List<NonPlayerCharacter> characters = new List<NonPlayerCharacter> (); //List of characters to be placed in the room
 	private List<Item> items = new List<Item> ();									//List of items to be placed in the room
+    // NEW FOR ASSESSMENT 3 
+    private Item key; // the key which will open up the underground lab is set to false to start with. False -> no key, True -> key is in that room.  
 
 	//__Constuctor__
 	public Scene (string name) {
@@ -27,12 +29,16 @@ public class Scene{
 		this.items.Add (item);
 	}
 
-
 	public void ResetScene(){
 		//Used to reset scenes from a previous playthough
 		this.characters.Clear ();
 		this.items.Clear ();
 	}
+
+    public void setKey(Item inkey)
+    {
+        key = inkey;
+    }
 
 	//Accessors
 	public string GetName(){
@@ -46,4 +52,21 @@ public class Scene{
 	public List<Item> GetItems(){
 		return this.items;
 	}
+
+    public Item getKey()
+    {
+        return this.key;
+    }
+
+    public bool hasKey()
+    {
+        if (key != null)
+        {
+            return true;
+        } else
+        {
+            return false;
+
+        }
+    }
 }

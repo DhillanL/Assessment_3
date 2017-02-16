@@ -14,6 +14,7 @@ public class LevelManager : MonoBehaviour {
 	private SpriteRenderer playerSpriteRenderer;
 	public GameObject[] characterSpawnPoints;
 	public GameObject[] itemSpawnPoints;
+    public GameObject keyspwanpoint;
 
 	//Used to change the scaling of characters and items per room
 	public float characterScaling = 1;
@@ -62,5 +63,17 @@ public class LevelManager : MonoBehaviour {
 				}
 			}
 		}
+        // NEW FOR ASSESSEMTN 3 
+        if (scene.hasKey())
+        {
+            Debug.Log("room has key");
+            GameObject prefab = Instantiate(scene.getKey().GetPrefab(),keyspwanpoint.transform.position, Quaternion.identity) as GameObject;
+            prefab.transform.localScale *= itemScaling;
+            ItemScript itemscript = prefab.GetComponent<ItemScript>();
+            itemscript.SetItem(scene.getKey());
+            
+
+
+        }
 	}
 }

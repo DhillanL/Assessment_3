@@ -23,7 +23,7 @@ public class ShowScore : MonoBehaviour {
         {
             scoredisplay.text = ("SCORE: \n\n" +
             "Time taken: " + convert_time(time) +
-            "\nClues found: " + clues_found + "/11 ") +
+            "\nClues found: " + clues_found + "/12 ") +
             "\n\n Overall Score: 0 /100";
 
         }

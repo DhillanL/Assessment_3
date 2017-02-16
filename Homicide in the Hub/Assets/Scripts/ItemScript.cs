@@ -16,7 +16,13 @@ public class ItemScript : MonoBehaviour {
 		NotebookManager.instance.inventory.AddItemToInventory (item);
 		NotebookManager.instance.UpdateNotebook();
         GameObject.FindWithTag("local").GetComponent<QuestioningScript>().unignoreNPC();
+        if (item.getID() == "Key")
+        {
+            GameMaster.instance.foundKey();
+        }
+        Debug.Log(GameMaster.instance.iskeyfound());
         Destroy (gameObject);
+       
 
 	}
 

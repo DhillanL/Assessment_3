@@ -10,6 +10,18 @@ public class TraverseRooms : MonoBehaviour {
 
 	//When the area on the map is clicked load the respective level
 	void OnMouseDown() {
-		SceneManager.LoadScene(level);
+        if (level == "Underground Lab" && GameMaster.instance.iskeyfound())
+        {
+            SceneManager.LoadScene(level);
+        } else if(level == "Underground Lab" && !GameMaster.instance.iskeyfound())
+        {
+
+        } else
+        {
+            SceneManager.LoadScene(level);
+        }
+
+ 
+		
 	}
 }
