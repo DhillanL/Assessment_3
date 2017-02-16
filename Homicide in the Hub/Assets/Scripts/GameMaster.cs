@@ -189,7 +189,6 @@ public Sprite pirateSprite;
 			"Errrm...are you sure? I’m not that useful really."
 		};
 
-<<<<<<< HEAD
 		string[] astrogirlResponses = new string[9] {
 			"Hah, as if you can force me to say anything incriminating, earthling!",
 			"Hey, careful. You don't know who you're talking to!",
@@ -238,14 +237,10 @@ public Sprite pirateSprite;
 			"I'm sorry, detective, but there's nothing that I can do to help you. I'm sure you'll manage on your own."
 		};
 
-		//Weaknesses
-		List<string> pirateWeaknesses = new List<string> {"Forceful","Wisecracking","Kind"};
-=======
         NonPlayerCharacter[] ignoredNPCs = new NonPlayerCharacter[6];
 
         //Weaknesses
         List<string> pirateWeaknesses = new List<string> {"Forceful","Wisecracking","Kind"};
->>>>>>> master
 		List<string> mimeWeaknesses = new List<string> {"Intimidating","Coaxing","Inspiring"};
 		List<string> millionaireWeaknesses = new List<string> {"Forceful","Rushed","Kind"};
 		List<string> cowgirlWeaknesses = new List<string> {"Condescending","Wisecracking","Inspiring"};
