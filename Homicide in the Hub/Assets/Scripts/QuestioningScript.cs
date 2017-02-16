@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class QuestioningScript : MonoBehaviour
 {
@@ -22,22 +23,24 @@ public class QuestioningScript : MonoBehaviour
 
     void Start()
     {
-        
-        //Get detective and character from singletons
-        detective = GameMaster.instance.GetPlayerCharacter();
-        character = InterrogationScript.instance.GetInterrogationCharacter();
-
-        //Change sprites to correct characters
-        SpriteRenderer detectiveSR = detectiveGameObject.GetComponent<SpriteRenderer>();
-        detectiveSR.sprite = detective.getSprite();
-
-        SpriteRenderer characterSR = characterGameObject.GetComponent<SpriteRenderer>();
-        characterSR.sprite = character.getSprite();
-
-        //Set Text in Style buttons to Styles of chosen detective
-        for (int i = 0; i < 3; i++)
+        if (SceneManager.GetActiveScene().name == ("Interrogation Room"))
         {
-            detectiveStylesText[i].text = detective.GetQuestioningStyles()[i];
+            //Get detective and character from singletons
+            detective = GameMaster.instance.GetPlayerCharacter();
+            character = InterrogationScript.instance.GetInterrogationCharacter();
+
+            //Change sprites to correct characters
+            SpriteRenderer detectiveSR = detectiveGameObject.GetComponent<SpriteRenderer>();
+            detectiveSR.sprite = detective.getSprite();
+
+            SpriteRenderer characterSR = characterGameObject.GetComponent<SpriteRenderer>();
+            characterSR.sprite = character.getSprite();
+
+            //Set Text in Style buttons to Styles of chosen detective
+            for (int i = 0; i < 3; i++)
+            {
+                detectiveStylesText[i].text = detective.GetQuestioningStyles()[i];
+            }
         }
     }
 
