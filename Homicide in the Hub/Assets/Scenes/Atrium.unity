@@ -1718,9 +1718,10 @@ GameObject:
   - 114: {fileID: 1339755208}
   - 114: {fileID: 1339755210}
   - 114: {fileID: 1339755211}
+  - 114: {fileID: 1339755212}
   m_Layer: 0
   m_Name: Local Scripts
-  m_TagString: Untagged
+  m_TagString: local
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1782,6 +1783,24 @@ MonoBehaviour:
   - {fileID: 706350803}
   characterScaling: 0.8
   itemScaling: 0.8
+--- !u!114 &1339755212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1339755207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad4e3e3859e819246bdb8e457b17544f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  detectiveGameObject: {fileID: 0}
+  characterGameObject: {fileID: 0}
+  detectiveStylesText:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  clueSpeech: {fileID: 0}
 --- !u!1 &1379015967
 GameObject:
   m_ObjectHideFlags: 0

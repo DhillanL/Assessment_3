@@ -83,7 +83,7 @@ public class QuestioningScript : MonoBehaviour
     //ignore functions -- will clean up later
     
     
-    private int numIgnoredNPCs = 0;
+    static private int numIgnoredNPCs = 0;
 
 
      public void ignoreNPC(string ignoreCharacter)

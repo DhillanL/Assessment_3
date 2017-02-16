@@ -17,13 +17,13 @@ public class ShowScore : MonoBehaviour {
         {
             scoredisplay.text = ("SCORE: \n\n" +
             "Time taken: " + convert_time(time) +
-            "\nClues found: " + clues_found + "/9 ") +
+            "\nClues found: " + clues_found + "/11 ") +
             "\n\n Overall Score: " + caluclate_score().ToString("0") + " /100";
         } else
         {
             scoredisplay.text = ("SCORE: \n\n" +
             "Time taken: " + convert_time(time) +
-            "\nClues found: " + clues_found + "/9 ") +
+            "\nClues found: " + clues_found + "/11 ") +
             "\n\n Overall Score: 0 /100";
 
         }
@@ -62,14 +62,21 @@ public class ShowScore : MonoBehaviour {
         {
             mul = 1;
         }
-        return ((clues_found * 5) * mul)+10;
+        double score = ((clues_found * 5) * mul)+10;
+        if (score > 100 )
+        {
+            return 100;
+        } else 
+        {
+            return score;
+        }
       
     }
 
     // Use this for initialization
     void Start()
     {
-        if (SceneManager.GetActiveScene().Equals("Win Screen"))
+        if (SceneManager.GetActiveScene().name == "Win Screen")
         {
             set_score(0);
         } else
