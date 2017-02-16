@@ -34,6 +34,10 @@ public Sprite pirateSprite;
 	public Sprite cowgirlSprite;
 	public Sprite romanSprite;
 	public Sprite wizardSprite;
+	public Sprite robotSprite;
+	public Sprite astrogirlSprite;
+	public Sprite chefSprite;
+	public Sprite madscientistSprite;
 
 	//NPC Prefabs
 	//Made public to allow for dragging and dropping of prefabs
@@ -43,6 +47,10 @@ public Sprite pirateSprite;
 	public GameObject cowgirlPref;
 	public GameObject romanPref;
 	public GameObject wizardPref;
+	public GameObject robotPref;
+	public GameObject astrogirlPref;
+	public GameObject chefPref;
+	public GameObject madscientistPref;
 
 
 	//Item Sprite decleratation
@@ -181,15 +189,72 @@ public Sprite pirateSprite;
 			"Errrm...are you sure? I’m not that useful really."
 		};
 
+<<<<<<< HEAD
+		string[] astrogirlResponses = new string[9] {
+			"Hah, as if you can force me to say anything incriminating, earthling!",
+			"Hey, careful. You don't know who you're talking to!",
+			"Okay, friend, you ain't fooling anyone with that scary attitude!",
+			"I'd like to help a respectable man such as yourself, but I haven’t seen anything.",
+			"Hahaha, I might just steal that joke! Yet, I haven't seen anything.",
+			"Hold your horses, mate, I haven't seen anything of note!",
+			"All of these questions aren't going to magically make me remember something I haven't seen.",
+			"Well, aren't you a kind fellow? Still, I haven't seen anything.",
+			"Hey, you know more than me about this, so you clearly don't need my help."
+		};
+
+		string[] chefRepsonses = new string[9] {
+			"Sacré bleu! You are very rude, monsieur detective!",
+			"How dare you patronise me, monsieur! I am the best Chef in the world!",
+			"Oh! No need for this, my friend! I have not seen one thing!",
+			"Qui, qui! I would love to help, but I know nothing.",
+			"Hahaha, very funny, monsieur! However, I don't know anything aside from the culinary arts!",
+			"Monsieur, slow down, please! English is not my first language!",
+			"So many questions, but I don't have the answer for any of them.",
+			"Oh! That is very kind, monsieur, but the only thing I know is how great my food is!",
+			"What did you say, monsieur? Would you like to taste this freshly baked baguette?"
+		};
+
+		string[] madscientistRepsonses = new string[9] {
+			"Do you know who you are talking to! Watch your language, peasant!",
+			"This patronising attitude of yours is annoying, I don't know anything that would interest you!",
+			"Hahaha, as if someone like you could intimidate someone like me!",
+			"I have no interest in this affair. It's not like I am the guilty one this time!",
+			"Your childish humour doesn’t compel me to help you at all…",
+			"I have no respect for people who lack patience! There's nothing I can tell you!",
+			"You ask too many questions for a pathetic commoner such as yourself.",
+			"You’re too kind for your own good, detective. I have no information regarding this case.",
+			"Very inspiring, but I have no interest in solving this murder."
+		};
+
+		string[] robotResponses = new string[9] {
+			"Goodness me! I am not programmed to answer to this kind of attitude, beep boop.",
+			"Don't you dare patronise me, you mean glob of grease! Beep boop.",
+			"Oh my, you are scary… I don't know anything, unfortunately. Beep boop.",
+			"Helping humans is part of my protocol. However, I haven't seen anything important. Beep boop.",
+			"You humans and your weird sense of humour… I could never understand it. Beep boop.",
+			"I can perform thousands of calculations every second… Even so I don't have any important information about this terrible crime. Beep boop.",
+			"If I told you half of the things I've heard about all of the people here, you'd short circuit… Oh wait, humans don't short circuit.",
+			"Oh my, that is very kind of you to say, detective! I haven't seen anything important though.",
+			"I'm sorry, detective, but there's nothing that I can do to help you. I'm sure you'll manage on your own."
+		};
+
+		//Weaknesses
+		List<string> pirateWeaknesses = new List<string> {"Forceful","Wisecracking","Kind"};
+=======
         NonPlayerCharacter[] ignoredNPCs = new NonPlayerCharacter[6];
 
         //Weaknesses
         List<string> pirateWeaknesses = new List<string> {"Forceful","Wisecracking","Kind"};
+>>>>>>> master
 		List<string> mimeWeaknesses = new List<string> {"Intimidating","Coaxing","Inspiring"};
 		List<string> millionaireWeaknesses = new List<string> {"Forceful","Rushed","Kind"};
 		List<string> cowgirlWeaknesses = new List<string> {"Condescending","Wisecracking","Inspiring"};
 		List<string> romanWeaknesses = new List<string> {"Condescending","Coaxing","Inquisitive"};
 		List<string> wizardWeaknesses = new List<string> {"Intimidating","Rushed","Inquisitive"};
+		List<string> robotWeaknesses = new List<string> {"Intimidating", "Coaxing", "Kind"};
+		List<string> astrogirlWeaknesses = new List<string> { "Forceful", "Wisecracking", "Inspiring" };
+		List<string> chefWeaknesses = new List<string> { "Condescending", "Coaxing", "Inquisitie" };
+		List<string> madscientistWeaknesses = new List<string> { "Forceful", "Rushed", "Kind" };
 
 
 		//Defining NPC's
@@ -199,6 +264,10 @@ public Sprite pirateSprite;
 		NonPlayerCharacter cowgirl = new NonPlayerCharacter("Jesse Ranger",cowgirlSprite,"Outlaw",cowgirlPref,cowgirlWeaknesses, cowgirlResponses );
 		NonPlayerCharacter roman = new NonPlayerCharacter("Celcius Maximus",romanSprite,"Legionnaire", romanPref,romanWeaknesses, romanResponses );
 		NonPlayerCharacter wizard = new NonPlayerCharacter("Randolf the Deep Purple",wizardSprite,"Dodgy Dealer",wizardPref,wizardWeaknesses, wizardResponses );
+		NonPlayerCharacter robot = new NonPlayerCharacter("Droid Mayweather",robotSprite, "Mean Machine", robotPref, robotWeaknesses, robotResponses );
+		NonPlayerCharacter astrogirl = new NonPlayerCharacter ("Astrigirl", astrogirlSprite, "Spacegirl", astrogirlPref, astrogirlWeaknesses, astrogirlResponses);
+		NonPlayerCharacter chef = new NonPlayerCharacter ("Philip Mingot", chefSprite, "The Gastronomer", chefPref, chefWeaknesses, chefRepsonses);
+		NonPlayerCharacter madscientist = new NonPlayerCharacter ("Professor Bon Vose", madscientistSprite, "Dr. Evil", madscientistPref, madscientistWeaknesses, madscientistRepsonses);
 
 		//Defining Scenes
 		Scene controlRoom = new Scene("Control Room");
@@ -231,7 +300,7 @@ public Sprite pirateSprite;
 
 		murderWeapons = new MurderWeapon[8] {cutlass,poison,garrote,knife,laserGun,leadPipe,westernPistol,wizardStaff};
 		itemClues = new Item [9] {beret,footprints,gloves,wine,shatteredGlass,shrapnel,smellyDeath,spellbook,tripwire};
-		characters =  new NonPlayerCharacter[6] {pirate,mimes,millionaire,cowgirl,roman,wizard};
+		characters =  new NonPlayerCharacter[10] {pirate,mimes,millionaire,cowgirl,roman,wizard,robot,astrogirl,chef,madscientist};
 		scenes = new Scene[8] {atrium,lectureTheatre,lakehouse,controlRoom,kitchen,islandOfInteraction,roof,undergroundLab};
 	}
 
@@ -240,10 +309,10 @@ public Sprite pirateSprite;
 		Shuffler shuffler = new Shuffler ();
 		shuffler.Shuffle (characters);
 		shuffler.Shuffle (scenes);
-		foreach (NonPlayerCharacter character in characters){ 	//For every character in the randomly shuffled array
+		foreach (NonPlayerCharacter character in characters){	//For every character in the randomly shuffled array
 			scenes [sceneCounter].AddNPCToArray (character);		//Assign a character to a scene
 			sceneCounter += 1;									//Increment sceneCounter
-			if (sceneCounter > scenes.Length) {					//If the counter is above the number of scenes cycle to the first scene.  
+			if (sceneCounter >= scenes.Length) {					//If the counter is above the number of scenes cycle to the first scene.  
 				sceneCounter = 0;
 			}
 		}

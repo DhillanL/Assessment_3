@@ -56,7 +56,11 @@ public class NotebookManager : MonoBehaviour {
 			submitButton.interactable = false;
 		} else {
 			HideAllToggles ();
+<<<<<<< HEAD
+			clueTitle.text = "Clues Obtained (" + (inventory.GetInventory ().Count + logbook.GetLogbook ().Count) + "/11)";
+=======
 			clueTitle.text = "Clues Obtained (" + clue_count() + "/9)";
+>>>>>>> master
 		}
 
 
