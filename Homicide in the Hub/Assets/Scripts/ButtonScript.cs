@@ -18,8 +18,8 @@ public class ButtonScript : MonoBehaviour {
 
     public void back()
     {
+        //Loads the previously stored scene in InterrogationScript.
         string previousScene = InterrogationScript.instance.GetReturnScene();
-
         SceneManager.LoadScene(previousScene);
     }
 
@@ -27,9 +27,8 @@ public class ButtonScript : MonoBehaviour {
     {
         //Loads the previously stored scene in InterrogationScript.
         //Only used in the interogation room.
-        //makes that npc untalkable to untill anothe clue is found
-
-        GameObject.FindWithTag("local").GetComponent<QuestioningScript>().ignoreNPC(InterrogationScript.instance.GetInterrogationCharacter().getNickname());
+        //makes that npc unable to talk to untill anothe clue is found
+        GameObject.FindWithTag("local").GetComponent<QuestioningScript>().IgnoreNPC(InterrogationScript.instance.GetInterrogationCharacter().getNickname());
         string previousScene = InterrogationScript.instance.GetReturnScene();
         
         SceneManager.LoadScene(previousScene);

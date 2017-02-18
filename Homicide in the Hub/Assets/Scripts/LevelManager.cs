@@ -63,15 +63,15 @@ public class LevelManager : MonoBehaviour {
 				}
 			}
 		}
-        // NEW FOR ASSESSEMTN 3 
-        if (scene.hasKey())
+        // NEW FOR ASSESSMENt 3 // 
+        if ((scene.hasKey()) && !(GameMaster.instance.iskeyfound()))  // if the room has the key adn the key has not been found yet 
         {
-            Debug.Log("room has key");
-            GameObject prefab = Instantiate(scene.getKey().GetPrefab(),keyspwanpoint.transform.position, Quaternion.identity) as GameObject;
-            prefab.transform.localScale *= itemScaling;
-            ItemScript itemscript = prefab.GetComponent<ItemScript>();
-            itemscript.SetItem(scene.getKey());
-            
+            GameObject prefab = Instantiate(scene.getKey().GetPrefab(),keyspwanpoint.transform.position, Quaternion.identity) as GameObject;  // get the key prefab and make an instance of it 
+            prefab.transform.localScale *= itemScaling;        // set it to the rihgt scale 
+            ItemScript itemscript = prefab.GetComponent<ItemScript>();    //collect the correct script to attach 
+            itemscript.SetItem(scene.getKey());  // set the key to the spwanpoint
+        
+         ///    
 
 
         }

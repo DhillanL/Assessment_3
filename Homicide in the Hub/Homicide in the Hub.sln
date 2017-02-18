@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2015
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Homicide in the Hub.Plugins", "Homicide in the Hub.Plugins.csproj", "{E67553EB-BBB4-8D95-9D33-C2154CADBDFA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Homicide in the Hub.CSharp.Plugins", "Homicide in the Hub.CSharp.Plugins.csproj", "{1A199A3B-2F9A-AFB0-4A53-6F935773D696}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Homicide in the Hub", "Homicide in the Hub.csproj", "{E1552B32-D9EA-7B6A-78AA-82A2A8EB8A7E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Homicide in the Hub.CSharp", "Homicide in the Hub.CSharp.csproj", "{98391B22-87C6-0726-2FDC-A521B6EF921F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Homicide in the Hub.Editor", "Homicide in the Hub.Editor.csproj", "{DF23C8BD-7DAA-7F17-5580-A39328FCD59D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Homicide in the Hub.CSharp.Editor", "Homicide in the Hub.CSharp.Editor.csproj", "{BED11CD8-7656-3B6A-721F-DA67B5EF0A76}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,18 +13,18 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{E67553EB-BBB4-8D95-9D33-C2154CADBDFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E67553EB-BBB4-8D95-9D33-C2154CADBDFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E67553EB-BBB4-8D95-9D33-C2154CADBDFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E67553EB-BBB4-8D95-9D33-C2154CADBDFA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E1552B32-D9EA-7B6A-78AA-82A2A8EB8A7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E1552B32-D9EA-7B6A-78AA-82A2A8EB8A7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E1552B32-D9EA-7B6A-78AA-82A2A8EB8A7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E1552B32-D9EA-7B6A-78AA-82A2A8EB8A7E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DF23C8BD-7DAA-7F17-5580-A39328FCD59D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DF23C8BD-7DAA-7F17-5580-A39328FCD59D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DF23C8BD-7DAA-7F17-5580-A39328FCD59D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DF23C8BD-7DAA-7F17-5580-A39328FCD59D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A199A3B-2F9A-AFB0-4A53-6F935773D696}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A199A3B-2F9A-AFB0-4A53-6F935773D696}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A199A3B-2F9A-AFB0-4A53-6F935773D696}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A199A3B-2F9A-AFB0-4A53-6F935773D696}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98391B22-87C6-0726-2FDC-A521B6EF921F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98391B22-87C6-0726-2FDC-A521B6EF921F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98391B22-87C6-0726-2FDC-A521B6EF921F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98391B22-87C6-0726-2FDC-A521B6EF921F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BED11CD8-7656-3B6A-721F-DA67B5EF0A76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BED11CD8-7656-3B6A-721F-DA67B5EF0A76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BED11CD8-7656-3B6A-721F-DA67B5EF0A76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BED11CD8-7656-3B6A-721F-DA67B5EF0A76}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

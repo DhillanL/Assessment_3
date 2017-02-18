@@ -236,7 +236,7 @@ public class Scenario
 			relevant_item_clues.Add (item_clues [7]);
 		}
 
-		// add the 4 irrelevant verbal clues
+		// add the 6 irrelevant physical clues - NEW FOR ASSESSMENT 3  
 		while (item_clue_pool.Count() < 8) {
 			int index = Random.Range (0, item_clues.Count()-1);
 			if (item_clue_pool.Contains (item_clues [index]) == false) {

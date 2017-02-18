@@ -316,7 +316,7 @@ public Sprite pirateSprite;
 		foreach (NonPlayerCharacter character in characters){	//For every character in the randomly shuffled array
 			scenes [sceneCounter].AddNPCToArray (character);		//Assign a character to a scene
 			sceneCounter += 1;									//Increment sceneCounter
-			if (sceneCounter >= scenes.Length) {					//If the counter is above the number of scenes cycle to the first scene.  
+			if (sceneCounter >= scenes.Length) {					//If the counter is above or equal to the number of scenes cycle to the first scene  NEW FOR ASSESSMENT 3  
 				sceneCounter = 0;
 			}
 		}
@@ -336,13 +336,13 @@ public Sprite pirateSprite;
             }
             // NEW FOR ASSESSMENT 3 
         }
-        int room = Random.Range(0, 7);
-        while (scenes[room].GetName() == "Underground Lab")
+        int room = Random.Range(0, 7);                            // pick a random number between 0 and 7 to reference the rooms
+        while (scenes[room].GetName() == "Underground Lab")      // ensure that the room selscted isn't the underground lab 
         {
-            room = Random.Range(0, 7);
+            room = Random.Range(0, 7);    
         }
 
-        scenes[room].setKey(keyobj);
+        scenes[room].setKey(keyobj);     // using the reference to that room get it from the scenes list and set the key to that room. 
         
 	}
 
@@ -419,7 +419,7 @@ public Sprite pirateSprite;
 		NotebookManager.instance.UpdateNotebook();
 	}
 
-    // NEW FOR ASSESSMENT 3 - THE TIMER FOR SCORING 
+    // NEW FOR ASSESSMENT 3 - THE TIMER FOR SCORING AND KEY ACCESSORS 
 
     public void stop_timer()
     {
@@ -443,12 +443,12 @@ public Sprite pirateSprite;
         }
     }
 
-    public void foundKey()
+    public void foundKey()   // sets the foundkey variable to true once the key has been found by the player 
     {
         foundkey = true;
     }
 
-    public bool iskeyfound()
+    public bool iskeyfound()   // a procdure which can be called as a predicate ot test whether the key has been found by the player so far 
     {
         return foundkey;
     }

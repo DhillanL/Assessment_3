@@ -19,7 +19,8 @@ public class QuestioningScript : MonoBehaviour
 
     public Text[] detectiveStylesText = new Text[3]; //Where Left-most button is 1 and rightmost is 3
     public Text clueSpeech;         //Where the clue text is written to
-    static private string[] ignpcs = new string[10];
+    static private string[] ignpcs = new string[10];  //holds all of the npcs that are being ignored
+    static private int numIgnoredNPCs = 0;  //the number of npcs that are being ignored
 
     void Start()
     {
@@ -80,27 +81,27 @@ public class QuestioningScript : MonoBehaviour
         return choice;
     }
 
-    //ignore functions -- will clean up later
-    
-    
-    static private int numIgnoredNPCs = 0;
+    ////////////ignore functions/////////////////
 
-
-     public void ignoreNPC(string ignoreCharacter)
+    //adds a new npc to the array of ignored npcs
+     public void IgnoreNPC(string ignoreCharacter)
     {
         ignpcs[numIgnoredNPCs] = ignoreCharacter;
         numIgnoredNPCs += 1;
-        Debug.Log(ignpcs[0]);
     } 
 
-    public void unignoreNPC()
+    //clears the list ofignored npcs
+    public void UnignoreNPC()
     {
-        for (int x = 0; x <= numIgnoredNPCs; x += 1)
+        for (int x = 0; x <= numIgnoredNPCs; x += 1) //loops through the list
         {
-            ignpcs[x] = null;
+            ignpcs[x] = null; //clears list
         }
-        numIgnoredNPCs = 0;
+        numIgnoredNPCs = 0; //resets num of npcs in list
     }
+
+    //checks if a npc is currently ignored
+    //returns true if they are ignored, false if not
     public bool Isignored(string name)
     {
         int check = 0;

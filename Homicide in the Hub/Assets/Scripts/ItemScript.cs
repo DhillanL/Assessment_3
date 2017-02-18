@@ -15,12 +15,13 @@ public class ItemScript : MonoBehaviour {
 		//Adds the item to the inventory, updates the notebook and destroys the item gameobject.
 		NotebookManager.instance.inventory.AddItemToInventory (item);
 		NotebookManager.instance.UpdateNotebook();
-        GameObject.FindWithTag("local").GetComponent<QuestioningScript>().unignoreNPC();
+        // ADDED FOR ASSESSMENT 3 
+        GameObject.FindWithTag("local").GetComponent<QuestioningScript>().UnignoreNPC();//npc is now ignored
         if (item.getID() == "Key")
         {
             GameMaster.instance.foundKey();
         }
-        Debug.Log(GameMaster.instance.iskeyfound());
+        ////////////////////////////
         Destroy (gameObject);
        
 
