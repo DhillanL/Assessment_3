@@ -20,7 +20,7 @@ using System.Linq; //Used for take in pick items
 	private MurderWeapon[] murderWeapons;
 	private PlayerCharacter playerCharacter;
 
-    // NEW FOR ASSESSMENT 3 
+    // NEW FOR ASSESSMENT 3 - locked room feature  
     public Item keyobj;
     private bool foundkey = false;
 
@@ -32,6 +32,7 @@ public Sprite pirateSprite;
 	public Sprite cowgirlSprite;
 	public Sprite romanSprite;
 	public Sprite wizardSprite;
+    // NEW FOR ASSESSEMNT 3 - adding mroe npcs 
 	public Sprite robotSprite;
 	public Sprite astrogirlSprite;
 	public Sprite chefSprite;
@@ -45,6 +46,8 @@ public Sprite pirateSprite;
 	public GameObject cowgirlPref;
 	public GameObject romanPref;
 	public GameObject wizardPref;
+
+    // NEW FOR ASSESSMENT 3 - adding more npcs 
 	public GameObject robotPref;
 	public GameObject astrogirlPref;
 	public GameObject chefPref;
@@ -189,6 +192,8 @@ public Sprite pirateSprite;
             "Errrm...are you sure? I’m not that useful really."
         };
 
+        // NEW FOR ASSSESSMENT 3 - REPOSNES FOR ADDING NEW NPCS 
+
         string[] astrogirlResponses = new string[9] {
             "Hah, as if you can force me to say anything incriminating, earthling!",
             "Hey, careful. You don't know who you're talking to!",
@@ -237,6 +242,7 @@ public Sprite pirateSprite;
             "I'm sorry, detective, but there's nothing that I can do to help you. I'm sure you'll manage on your own."
         };
 
+        // NEW FOR ASSESSEMNT 3 - IGNORE 
         NonPlayerCharacter[] ignoredNPCs = new NonPlayerCharacter[6];
 
         //Weaknesses
@@ -259,6 +265,8 @@ public Sprite pirateSprite;
         NonPlayerCharacter cowgirl = new NonPlayerCharacter("Jesse Ranger", cowgirlSprite, "Outlaw", cowgirlPref, cowgirlWeaknesses, cowgirlResponses);
         NonPlayerCharacter roman = new NonPlayerCharacter("Celcius Maximus", romanSprite, "Legionnaire", romanPref, romanWeaknesses, romanResponses);
         NonPlayerCharacter wizard = new NonPlayerCharacter("Randolf the Deep Purple", wizardSprite, "Dodgy Dealer", wizardPref, wizardWeaknesses, wizardResponses);
+
+        // NEW FOR ASSESSMETN 3 - ADDING NEW NPCS //
         NonPlayerCharacter robot = new NonPlayerCharacter("Droid Mayweather", robotSprite, "Mean Machine", robotPref, robotWeaknesses, robotResponses);
         NonPlayerCharacter astrogirl = new NonPlayerCharacter("Astrigirl", astrogirlSprite, "Spacegirl", astrogirlPref, astrogirlWeaknesses, astrogirlResponses);
         NonPlayerCharacter chef = new NonPlayerCharacter("Philip Mingot", chefSprite, "The Gastronomer", chefPref, chefWeaknesses, chefRepsonses);
@@ -293,7 +301,7 @@ public Sprite pirateSprite;
         Item spellbook = new Item(spellbookPrefab, "Spellbook", "A spellbook used by those who practise in the magic arts", spellbookSprite);
         Item tripwire = new Item(tripwirePrefab, "Tripwire", "A used tripwire most likely used to immobilize the victim", tripwireSprite);
 
-        // NEW FOR ASSESSMENT 3 
+        // NEW FOR ASSESSMENT 3 - LOCKED ROOM FEATURE
         Item key = new Item(keyPrefab, "Key", "Key has the words underground lab on it", keySprite);
 
         murderWeapons = new MurderWeapon[8] { cutlass, poison, garrote, knife, laserGun, leadPipe, westernPistol, wizardStaff };
@@ -315,8 +323,11 @@ public Sprite pirateSprite;
 		shuffler.Shuffle (scenes);
 		foreach (NonPlayerCharacter character in characters){	//For every character in the randomly shuffled array
 			scenes [sceneCounter].AddNPCToArray (character);		//Assign a character to a scene
-			sceneCounter += 1;									//Increment sceneCounter
-			if (sceneCounter >= scenes.Length) {					//If the counter is above or equal to the number of scenes cycle to the first scene  NEW FOR ASSESSMENT 3  
+			sceneCounter += 1;                                  //Increment sceneCounter
+
+            //NEW FOR ASSESSMENT 3 - ADDING NEW NPC INTO THE GAME //
+
+            if (sceneCounter >= scenes.Length) {					//If the counter is above or equal to the number of scenes cycle to the first scene 
 				sceneCounter = 0;
 			}
 		}
@@ -334,7 +345,7 @@ public Sprite pirateSprite;
             if (sceneIndex > scenes.Length) {
                 sceneIndex = 0;
             }
-            // NEW FOR ASSESSMENT 3 
+            // NEW FOR ASSESSMENT 3 - LOCKED ROOM 
         }
         int room = Random.Range(0, 7);                            // pick a random number between 0 and 7 to reference the rooms
         while (scenes[room].GetName() == "Underground Lab")      // ensure that the room selscted isn't the underground lab 
@@ -419,30 +430,31 @@ public Sprite pirateSprite;
 		NotebookManager.instance.UpdateNotebook();
 	}
 
-    // NEW FOR ASSESSMENT 3 - THE TIMER FOR SCORING AND KEY ACCESSORS 
+    // NEW FOR ASSESSMENT 3 - TIMER FOR SCORING IN THE GAME 
 
-    public void stop_timer()
+    public void stop_timer() // stop the timer called when the game is finshed 
     {
         run_timer = false;
     }
-    public void set_timer()
+    public void set_timer() // called when the game starts 
     {
         run_timer = true;
     }
-    public float get_timer()
+    public float get_timer()  // called at the end to calaute teh score based on the time taken 
     {
         return timer;
     }
 
-    private void Update()
+    private void Update()  //update function will update the variable timer which holds hte time taken in the game by 1 every second. 
     {
         if (run_timer)
         {
-            timer += Time.deltaTime;
-            //Debug.Log(timer);
+            timer += Time.deltaTime;  // time.deltatime is a built in which uses seconds to indicate when to update values by 1
+           
         }
     }
 
+    // NEW FOR ASSSESSMENT 3 - LOCKED ROOM FEATURE 
     public void foundKey()   // sets the foundkey variable to true once the key has been found by the player 
     {
         foundkey = true;

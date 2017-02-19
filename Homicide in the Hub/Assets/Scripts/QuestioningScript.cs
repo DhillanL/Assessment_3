@@ -19,9 +19,10 @@ public class QuestioningScript : MonoBehaviour
 
     public Text[] detectiveStylesText = new Text[3]; //Where Left-most button is 1 and rightmost is 3
     public Text clueSpeech;         //Where the clue text is written to
-    static private string[] ignpcs = new string[10];  //holds all of the npcs that are being ignored
-    static private int numIgnoredNPCs = 0;  //the number of npcs that are being ignored
-
+    // new for ASSESSMENT 3 // 
+    static private string[] ignpcs = new string[10];  //holds all of the npcs that are being ignored 
+    static private int numIgnoredNPCs = 0;  //the number of npcs that are being ignored the variable is static so that the value deosnt change over the the different scenes loaded 
+    
     void Start()
     {
         if (SceneManager.GetActiveScene().name == ("Interrogation Room"))
@@ -81,7 +82,8 @@ public class QuestioningScript : MonoBehaviour
         return choice;
     }
 
-    ////////////ignore functions/////////////////
+           // NEW FOR ASSSESSMENT 3 // 
+            // Ignore Procedures //
 
     //adds a new npc to the array of ignored npcs
      public void IgnoreNPC(string ignoreCharacter)
@@ -89,6 +91,7 @@ public class QuestioningScript : MonoBehaviour
         ignpcs[numIgnoredNPCs] = ignoreCharacter;
         numIgnoredNPCs += 1;
     } 
+
 
     //clears the list ofignored npcs
     public void UnignoreNPC()

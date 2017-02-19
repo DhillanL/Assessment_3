@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class ShowScore : MonoBehaviour {
 
-    // ALL IS NEW FOR ASSESSMENT 3 
+    // ALL IS NEW FOR ASSESSMENT 3 - score 
     public Text scoredisplay;
 
     private int clues_found = NotebookManager.instance.clue_count();   // the number of clues found during the game
@@ -78,6 +78,7 @@ public class ShowScore : MonoBehaviour {
       
     }
 
+    // NEW FOR ASSESSMENT 3 - LEADERBAORD 
     private void set_highscore()  // procedure called by set_score to test if the score is good enough to get a place on the leaderboard
     {
         int third = PlayerPrefs.GetInt("Score3");  // get the score that is in third place

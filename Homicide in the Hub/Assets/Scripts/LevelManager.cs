@@ -63,7 +63,7 @@ public class LevelManager : MonoBehaviour {
 				}
 			}
 		}
-        // NEW FOR ASSESSMENt 3 // 
+        // NEW FOR ASSESSMENt 3 - locked room feature // 
         if ((scene.hasKey()) && !(GameMaster.instance.iskeyfound()))  // if the room has the key adn the key has not been found yet 
         {
             GameObject prefab = Instantiate(scene.getKey().GetPrefab(),keyspwanpoint.transform.position, Quaternion.identity) as GameObject;  // get the key prefab and make an instance of it 
@@ -71,7 +71,7 @@ public class LevelManager : MonoBehaviour {
             ItemScript itemscript = prefab.GetComponent<ItemScript>();    //collect the correct script to attach 
             itemscript.SetItem(scene.getKey());  // set the key to the spwanpoint
         
-         ///    
+             
 
 
         }

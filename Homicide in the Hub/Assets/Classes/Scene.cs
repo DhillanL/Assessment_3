@@ -35,6 +35,7 @@ public class Scene{
 		this.items.Clear ();
 	}
 
+    // NEW FOR ASSESSMENT 3 - locked room feature 
     public void setKey(Item inkey)
     {
         key = inkey;
@@ -53,6 +54,8 @@ public class Scene{
 		return this.items;
 	}
 
+
+    // NEW FOR ASSESSMENT 3 - locked room feature 
     public Item getKey()
     {
         return this.key;

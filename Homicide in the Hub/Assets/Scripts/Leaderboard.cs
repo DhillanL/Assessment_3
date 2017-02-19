@@ -4,6 +4,8 @@ using UnityEngine.UI;
 
 public class Leaderboard : MonoBehaviour {
 
+    // WHOLE SCRIPT IS NEW FOR ASSESSMENT 3 - LEADERBOARD
+
     // Whole script is new for assessment three. It is used to display the highscores on the leaderbaord. scores will be saved even if player closes the game
     // playerprefs is used which implements a dictionary to store teh values. 
 

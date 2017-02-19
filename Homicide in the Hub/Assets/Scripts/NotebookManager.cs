@@ -84,9 +84,11 @@ public class NotebookManager : MonoBehaviour {
 
 	}
 
+    // NEW FOR ASSESSMENT 3  - scoring///
+
     public int clue_count()
     {
-        return (inventory.GetInventory().Count + logbook.GetLogbook().Count);
+        return (inventory.GetInventory().Count + logbook.GetLogbook().Count);   // Returns the number of the total clues that have been found by the player by the end of the game.  there are a total of 12 per game
     }
 		
 	public void ShowClueInfomation(int index){
