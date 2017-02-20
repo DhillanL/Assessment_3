@@ -28,7 +28,7 @@ public class ShowScore : MonoBehaviour {
             scoredisplay.text = ("SCORE: \n\n" +                                    // score title 
             "Time taken: " + convert_time(time) +                                   // calls convert time to give the time taken by the player and a nice readable format 
             "\nClues found: " + clues_found + "/12 ") +                             // number of clues found out of 12 
-            "\n\n Overall Score: " + caluclate_score().ToString("0") + " /100";     // overall score out of 100 
+            "\n\n Overall Score: " + caluclate_score(time,clues_found).ToString("0") + " /100";     // overall score out of 100 
             set_highscore();                                                        // call to set_highscore to test if the new score will be on the leaderboard
         } else
         {
@@ -57,7 +57,7 @@ public class ShowScore : MonoBehaviour {
         return mins.ToString() + ":" + seconds.ToString();
     }
 
-    public double caluclate_score()  // procedure used to calculate a score for the game 
+    public double caluclate_score(int time, int clues_found)  // procedure used to calculate a score for the game 
     {
         double mul;
         if (time <= 90)   // firstly checks how long it took the player to complete the game and accordingly sets a multiplyer
