@@ -9,12 +9,20 @@ public class ShowScore : MonoBehaviour {
     // ALL IS NEW FOR ASSESSMENT 3 - score 
     public Text scoredisplay;
 
-    private int clues_found = NotebookManager.instance.clue_count();   // the number of clues found during the game
-    private int time = (int)GameMaster.instance.get_timer();           // gets the time taken to complete the game in seconds 
-    private int final_score;                                           // final calculated score used in when adding to high scores
 
-    private void set_score(int screen)   // sets the score for game and sets the disaplys. Also will call set_highscore if the score is more than 0. 
+    private int clues_found;                 // the number of clues found during the game
+    private int time;                        // gets the time taken to complete the game in seconds 
+    private int final_score;                 // final calculated score used in when adding to high scores
+
+    public void loadvars()
     {
+        clues_found = NotebookManager.instance.clue_count();
+        time = (int)GameMaster.instance.get_timer();
+    }
+
+    public void set_score(int screen)   // sets the score for game and sets the disaplys. Also will call set_highscore if the score is more than 0. 
+    {
+        loadvars();
         if (screen == 0)
         {
             scoredisplay.text = ("SCORE: \n\n" +                                    // score title 
@@ -32,7 +40,7 @@ public class ShowScore : MonoBehaviour {
         }
     }
 
-    private string convert_time(int time)  // procedure is used to convert the time in second into a time format of mins:seconds so it displays better 
+    public string convert_time(int time)  // procedure is used to convert the time in second into a time format of mins:seconds so it displays better 
     {
         int mins  = -1;
         int seconds = 0;
@@ -49,7 +57,7 @@ public class ShowScore : MonoBehaviour {
         return mins.ToString() + ":" + seconds.ToString();
     }
 
-    private double caluclate_score()  // procedure used to calculate a score for the game 
+    public double caluclate_score()  // procedure used to calculate a score for the game 
     {
         double mul;
         if (time <= 90)   // firstly checks how long it took the player to complete the game and accordingly sets a multiplyer
@@ -79,7 +87,7 @@ public class ShowScore : MonoBehaviour {
     }
 
     // NEW FOR ASSESSMENT 3 - LEADERBAORD 
-    private void set_highscore()  // procedure called by set_score to test if the score is good enough to get a place on the leaderboard
+    public void set_highscore()  // procedure called by set_score to test if the score is good enough to get a place on the leaderboard
     {
         int third = PlayerPrefs.GetInt("Score3");  // get the score that is in third place
         if (final_score > third)
