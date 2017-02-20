@@ -9,9 +9,10 @@ Launch:
 
 
 1. In order to start the game you must launch the .exe file in this folder.
-2. The game should then launch. You will then see the main menu screen.
-3. Upon launching the game, you will be brought to the character selection scene. You may choose one of the three available characters to play the game with.
-4. Upon selecting a character you will be put into the atrium of the Ron Cooke hub.
+2. The game should be loaded in 1920x1080 resolution
+3. The game should then launch. You will then see the main menu screen.
+4. Upon launching the game, you will be brought to the character selection scene. You may choose one of the three available characters to play the game with.
+5. Upon selecting a character you will be put into the atrium of the Ron Cooke hub.
 
 
 Navigation:
