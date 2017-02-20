@@ -13,7 +13,7 @@ public class Leaderboard : MonoBehaviour {
     public Text secondscore;
     public Text thirdscore;
 
-    private void uploadscores()    // procedure used to update the scores in the leaderbaord. called when the leaderboard scene is loaded and when scores are reset
+    public void uploadscores()    // procedure used to update the scores in the leaderbaord. called when the leaderboard scene is loaded and when scores are reset
     {
         if (PlayerPrefs.HasKey("Score1"))
         {
@@ -34,7 +34,7 @@ public class Leaderboard : MonoBehaviour {
         PlayerPrefs.SetInt("Score1", 0);
         PlayerPrefs.SetInt("Score2", 0);
         PlayerPrefs.SetInt("Score3", 0);
-        uploadscores();
+        //uploadscores();
     }
 
     // Use this for initialization
